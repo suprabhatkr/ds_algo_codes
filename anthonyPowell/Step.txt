@@ -1,0 +1,32 @@
+1st step:
+	Listen
+	Typically every element is needed to solve a problem.
+	In case if you are able to solve it without any detail, then it might be needed for solving it optimally. 
+2nd step:
+	Example
+	Make big without no special case, because it will help you to understand core of the problem
+3rd step:
+	Brute Force
+	Better to have a brute force if no solution at all
+	It means you understand the problem
+	Don't code it, state runtime and then optimise
+4th step:
+	Optimize
+	Good chunk of time
+5th step:
+	Walk through your code
+	What variables and data structure
+	How, when and why they change
+	What is the structure of your code
+6th step:
+	Code
+	Write straight
+	Use space wisely
+	variable naming, consistent spaces,descriptive_varible name
+	Modularization(break into function)
+7th step:
+	Test your code, analyze the code, Think about each line, Double check things that look weird
+	Use test cases (smaller, edge cases)
+	Think as you test
+	Test your code not algorithm. Algorithm has a good chance of being write.
+	Wrong fixes are more problamatic
