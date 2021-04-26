@@ -1,0 +1,7 @@
+1.Identify bottleneck for duplicated work. If the work is duplicated, then store it somewhere else.
+2.Space/Time tradeoff
+	keep hash table at top your mind.
+3.Do it yourself
+	use big example and then reverse engineer that process. 
+	Means solve the way you manually would have solved it. 
+

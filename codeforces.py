@@ -1,37 +1,22 @@
-T=int(input())
-for t in range(T):
-    n,u,r,d,l=(map(int,input().split()))
-    max_r,max_l,max_u,max_d,min_r,min_l,min_u,min_d=n,n,n,n,0,0,0,0
-    flag=True
-    if u==0 and d==0 and (r>n-2 or l>n-2):
-        flag=False
-    elif l==0 and r==0 and (u>n-2 or d>n-2):
-        flag=False
-    elif l==0 and r==1 and ((u>n-2 and d>n-2)):
-        flag=False
-    elif l==1 and r==0 and ((u>n-2 and d>n-2)):
-        flag=False
-    elif u==0 and d==1 and ((l>n-2 and r>n-2)):
-        flag=False
-    elif u==1 and d==0 and ((l>n-2 and r>n-2)):
-        flag=False
-    elif u==0 and (l>n-1 or r>n-1):
-        flag=False
-    elif d==0 and (l>n-1 or r>n-1):
-        flag=False
-    elif l==0 and (u>n-1 or d>n-1):
-        flag=False
-    elif r==0 and (u>n-1 or d>n-1):
-        flag=False
-    elif r==1 and (u>n-1 and d>n-1):
-        flag=False
-    elif l==1 and (u>n-1 and d>n-1):
-        flag=False
-    elif d==1 and (r>n-1 and l>n-1):
-        flag=False
-    elif u==1 and (r>n-1 and l>n-1):
-        flag=False
-    if flag:
-        print("yes") 
-    else:
-        print("no") 
+# Dynamic Programming Python implementation of Min Cost Path
+# problem
+R = 3
+C = 3
+
+def minCost(cost, m, n):
+    tc = [[0 for x in range(C)] for x in range(R)]
+
+    tc[0][0] = cost[0][0]
+    for i in range(1, m+1):
+        tc[i][0] = tc[i-1][0] + cost[i][0]
+    for j in range(1, n+1):
+        tc[0][j] = tc[0][j-1] + cost[0][j]
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            tc[i][j] = min(tc[i-1][j-1], tc[i-1][j], tc[i][j-1]) + cost[i][j]
+    return tc[m][n]
+
+cost = [[1, 2, 3],
+        [4, 8, 2],
+        [1, 5, 3]]
+print(minCost(cost, 2, 2))
